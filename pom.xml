@@ -3,7 +3,7 @@
     <groupId>org.mindrot</groupId>
     <artifactId>jbcrypt</artifactId>
     <packaging>jar</packaging>
-    <version>0.3m</version>
+    <version>0.4m-SNAPSHOT</version>
     <name>jbcrypt</name>
     <url>http://www.mindrot.org/</url>
     <description>
@@ -17,9 +17,9 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:svn:https://jbcrypt.googlecode.com/svn/tags/jbcrypt-0.3m</connection>
-        <developerConnection>scm:svn:https://jbcrypt.googlecode.com/svn/tags/jbcrypt-0.3m</developerConnection>
-        <url>scm:svn:https://jbcrypt.googlecode.com/svn/tags/jbcrypt-0.3m</url>
+        <connection>scm:svn:https://jbcrypt.googlecode.com/svn/trunk</connection>
+        <developerConnection>scm:svn:https://jbcrypt.googlecode.com/svn/trunk</developerConnection>
+        <url>http://code.google.com/p/jbcrypt/source/browse/</url>
     </scm>
     <organization>
         <name>mindrot.org</name>
@@ -55,25 +55,25 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<version>2.0</version>
-				<configuration>
-					<tagBase>https://jbcrypt.googlecode.com/svn/tags</tagBase>
-					<mavenExecutorId>forked-path</mavenExecutorId>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-				</configuration>
-			</plugin>
-		</plugins>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.0</version>
+                <configuration>
+                    <tagBase>https://jbcrypt.googlecode.com/svn/tags</tagBase>
+                    <mavenExecutorId>forked-path</mavenExecutorId>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
     <profiles>
         <profile>
@@ -91,17 +91,17 @@
                         <artifactId>maven-gpg-plugin</artifactId>
                         <version>1.0</version>
                         <executions>
-							<execution>
-								<id>sign-artifacts</id>
-								<phase>verify</phase>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
                                 <goals>
                                     <goal>sign</goal>
                                 </goals>
                             </execution>
                         </executions>
                         <configuration>
-                        	<keyname>${gpg.keyname}</keyname>
-                        	<useAgent>${gpg.useAgent}</useAgent>
+                            <keyname>${gpg.keyname}</keyname>
+                            <useAgent>${gpg.useAgent}</useAgent>
                         </configuration>
                     </plugin>
                 </plugins>
